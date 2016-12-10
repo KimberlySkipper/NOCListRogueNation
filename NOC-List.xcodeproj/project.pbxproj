@@ -8,20 +8,26 @@
 
 /* Begin PBXBuildFile section */
 		2C25A3CC1DF7389900BC1939 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C25A3CB1DF7389900BC1939 /* AppDelegate.swift */; };
-		2C25A3CE1DF7389900BC1939 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C25A3CD1DF7389900BC1939 /* ViewController.swift */; };
 		2C25A3D11DF7389900BC1939 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C25A3CF1DF7389900BC1939 /* Main.storyboard */; };
 		2C25A3D31DF7389900BC1939 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2C25A3D21DF7389900BC1939 /* Assets.xcassets */; };
 		2C25A3D61DF7389900BC1939 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2C25A3D41DF7389900BC1939 /* LaunchScreen.storyboard */; };
+		2C25A3DE1DF73A1B00BC1939 /* AgentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C25A3DD1DF73A1B00BC1939 /* AgentTableViewController.swift */; };
+		2C25A3E01DF73B4300BC1939 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C25A3DF1DF73B4300BC1939 /* DetailViewController.swift */; };
+		2C25A3E21DF744F500BC1939 /* NOC.json in Resources */ = {isa = PBXBuildFile; fileRef = 2C25A3E11DF744F500BC1939 /* NOC.json */; };
+		2C25A3E41DF7617800BC1939 /* SecretAgent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C25A3E31DF7617800BC1939 /* SecretAgent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2C25A3C81DF7389900BC1939 /* NOC-List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "NOC-List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C25A3CB1DF7389900BC1939 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2C25A3CD1DF7389900BC1939 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2C25A3D01DF7389900BC1939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2C25A3D21DF7389900BC1939 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2C25A3D51DF7389900BC1939 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2C25A3D71DF7389900BC1939 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2C25A3DD1DF73A1B00BC1939 /* AgentTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AgentTableViewController.swift; path = ../AgentTableViewController.swift; sourceTree = "<group>"; };
+		2C25A3DF1DF73B4300BC1939 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		2C25A3E11DF744F500BC1939 /* NOC.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = NOC.json; sourceTree = "<group>"; };
+		2C25A3E31DF7617800BC1939 /* SecretAgent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecretAgent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,9 +60,12 @@
 		2C25A3CA1DF7389900BC1939 /* NOC-List */ = {
 			isa = PBXGroup;
 			children = (
-				2C25A3CB1DF7389900BC1939 /* AppDelegate.swift */,
-				2C25A3CD1DF7389900BC1939 /* ViewController.swift */,
+				2C25A3E31DF7617800BC1939 /* SecretAgent.swift */,
+				2C25A3DD1DF73A1B00BC1939 /* AgentTableViewController.swift */,
+				2C25A3DF1DF73B4300BC1939 /* DetailViewController.swift */,
 				2C25A3CF1DF7389900BC1939 /* Main.storyboard */,
+				2C25A3E11DF744F500BC1939 /* NOC.json */,
+				2C25A3CB1DF7389900BC1939 /* AppDelegate.swift */,
 				2C25A3D21DF7389900BC1939 /* Assets.xcassets */,
 				2C25A3D41DF7389900BC1939 /* LaunchScreen.storyboard */,
 				2C25A3D71DF7389900BC1939 /* Info.plist */,
@@ -123,6 +132,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C25A3E21DF744F500BC1939 /* NOC.json in Resources */,
 				2C25A3D61DF7389900BC1939 /* LaunchScreen.storyboard in Resources */,
 				2C25A3D31DF7389900BC1939 /* Assets.xcassets in Resources */,
 				2C25A3D11DF7389900BC1939 /* Main.storyboard in Resources */,
@@ -136,8 +146,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2C25A3CE1DF7389900BC1939 /* ViewController.swift in Sources */,
+				2C25A3E01DF73B4300BC1939 /* DetailViewController.swift in Sources */,
+				2C25A3E41DF7617800BC1939 /* SecretAgent.swift in Sources */,
 				2C25A3CC1DF7389900BC1939 /* AppDelegate.swift in Sources */,
+				2C25A3DE1DF73A1B00BC1939 /* AgentTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,6 +309,7 @@
 				2C25A3DC1DF7389900BC1939 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
