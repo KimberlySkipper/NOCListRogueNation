@@ -26,7 +26,7 @@ class SecretAgent
     
     
     //producing agent Array from JSON dictionary file
-    static func createAgentFromDictionary( nocDictionaryMadeFromJSONFile: [Any]) -> [SecretAgent]?
+   static func createAgentArrayFromDictionary( nocDictionaryMadeFromJSONFile: [Any]) -> [SecretAgent]?
     
     {
         var arrayOfAgents = [SecretAgent]()
@@ -61,6 +61,7 @@ class SecretAgent
         return arrayOfAgents
     }
 }
+ 
 
 
 

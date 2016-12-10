@@ -11,26 +11,27 @@ import UIKit
 class AgentTableViewController: UITableViewController
 {
     //array of dictionaries
-    var myAgentArray = [String]()
-    //var myNocDictionary = [String]()
+    var myAgentArray = [SecretAgent]()
+    
 
     
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
 
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        self.loadNOCList()
     }
 
-    override func didReceiveMemoryWarning() {
+    override func didReceiveMemoryWarning()
+    {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
      //MARK: - Table view data source
 
-    override func numberOfSections(in tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int
+    {
                 return 1
     }
 
@@ -43,14 +44,16 @@ class AgentTableViewController: UITableViewController
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "AgentCell", for: indexPath)
 
-        // Configure the cell...
-
+        let anAgent = myAgentArray[indexPath.row]
+        cell.textLabel?.text = anAgent.coverName
+        cell.detailTextLabel?.text = anAgent.realName
+        
         return cell
     }
     
    
 
-   func loadNOCList ()
+    func loadNOCList ()
     {
         
        let bundle = Bundle(for: type(of: self))
@@ -59,68 +62,51 @@ class AgentTableViewController: UITableViewController
             do
             {
                 let data = try Data(contentsOf: theURL)
-               if let parsedData = try? JSONSerialization.jsonObject(with: data) as! [String:Any]
+               if let arrayOfDictionaries = try? JSONSerialization.jsonObject(with: data) as! [Any]
                {
   
-                 print(parsedData)
+                if let createAnArray = SecretAgent.createAgentArrayFromDictionary(nocDictionaryMadeFromJSONFile: arrayOfDictionaries)
+                {
+                    self.myAgentArray = createAnArray
+                    self.tableView.reloadData()
                 }
-   }
+
+                
+                }
+            }
            catch
            {
                print(error)
            }
        }
     }
-    
-    
-    
-    
-    
-}
+            }
 
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
 
-    /*
-    // Override to support editing the table view.
-    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            // Delete the row from the data source
-            tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(_ tableView: UITableView, moveRowAt fromIndexPath: IndexPath, to: IndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(_ tableView: UITableView, canMoveRowAt indexPath: IndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
-        return true
-    }
-    */
-
-    /*
-    // MARK: - Navigation
+/*    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+
+*/
+/*#pragma mark - Navigation
+
+// In a storyboard-based application, you will often want to do a little preparation before navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if([[segue identifier] isEqualToString:@"SecretAgentDetailSegue"])
+    {
+        SecretAgentDetailViewController *detailVC = [segue destinationViewController];
+        
+        UITableViewCell *selectedCell = (UITableViewCell *)sender;
+        
+        NSIndexPath *indexPath = [self.tableView indexPathForCell: selectedCell];
+        SecretAgent *selectedSecretAgent = self.agents [indexPath.row];
+        
+        detailVC.secretAgent = selectedSecretAgent; */
+
 
 
