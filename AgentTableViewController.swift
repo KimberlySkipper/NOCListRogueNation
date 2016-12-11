@@ -18,7 +18,6 @@ class AgentTableViewController: UITableViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
         self.loadNOCList()
     }
 
@@ -80,18 +79,25 @@ class AgentTableViewController: UITableViewController
            }
        }
     }
-            }
+    
 
 
-/*    // MARK: - Navigation
+    // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if segue.identifier == "DetailViewSeque"
+        {
+            // Get the new view controller using segue.destinationViewController.
+            let detailVC = segue.destination as! DetailViewController
+            let indexPath = tableView.indexPathForSelectedRow!
+            let oneAgent = myAgentArray[indexPath.row]
+            detailVC.secretAgent = oneAgent
+        }
         // Pass the selected object to the new view controller.
     }
 
-*/
 /*#pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -110,3 +116,4 @@ class AgentTableViewController: UITableViewController
 
 
 
+}

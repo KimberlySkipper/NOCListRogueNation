@@ -15,12 +15,16 @@ class DetailViewController: UIViewController
     @IBOutlet weak var levelAccessLabel: UILabel!
     @IBOutlet weak var realNameLabel: UILabel!
     
-       
+    var secretAgent:SecretAgent!
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         title = "Security Clearance"
+        
+        self.coverNameLabel.text = self.secretAgent.coverName
+        self.levelAccessLabel.text = String(self.secretAgent.accessLevel)
+        self.realNameLabel.text = self.secretAgent.realName
 
         // Do any additional setup after loading the view.
     }

@@ -14,10 +14,10 @@ class SecretAgent
     //agent properties
     let coverName: String
     let realName: String
-    let accessLevel: String
+    let accessLevel: Int
     
     //how a secret agent is created
-    init(coverName: String, realName: String, accessLevel: String)
+    init(coverName: String, realName: String, accessLevel: Int)
     {
         self.coverName = coverName
         self.realName = realName
@@ -44,9 +44,9 @@ class SecretAgent
                 {
                      if let aCoverName = aSingleAgentDictionary["coverName"] as? String
                      {
-                        if let aRealName = aSingleAgentDictionary["companyName"] as? String
+                        if let aRealName = aSingleAgentDictionary["realName"] as? String
                         {
-                            if let anAccessLevel = aSingleAgentDictionary["assessLevel"] as? String
+                            if let anAccessLevel  = aSingleAgentDictionary["accessLevel"] as? Int
                             {
                                 let anAgent = SecretAgent(coverName: aCoverName, realName: aRealName, accessLevel: anAccessLevel)
                                 

@@ -12,7 +12,7 @@
         <!--Agents-->
         <scene sceneID="aMy-7P-6h1">
             <objects>
-                <tableViewController id="Zey-7r-0xn" sceneMemberID="viewController">
+                <tableViewController id="Zey-7r-0xn" customClass="AgentTableViewController" customModule="NOC_List" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="vnk-Wy-V8S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -42,7 +42,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="9wn-vF-h2G" kind="show" id="X97-Gj-dpB"/>
+                                    <segue destination="9wn-vF-h2G" kind="show" identifier="DetailViewSegue" id="X97-Gj-dpB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -99,9 +99,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="coverName" destination="NYc-pV-L8t" id="b8g-uq-Fc6"/>
-                        <outlet property="levelAccess" destination="J4F-Ol-e8x" id="C2U-Rt-Xdi"/>
-                        <outlet property="realName" destination="kw2-mg-lo3" id="qJB-1z-cRg"/>
+                        <outlet property="coverNameLabel" destination="NYc-pV-L8t" id="QAG-t7-IJP"/>
+                        <outlet property="levelAccessLabel" destination="J4F-Ol-e8x" id="S80-M0-H2O"/>
+                        <outlet property="realNameLabel" destination="kw2-mg-lo3" id="jdf-yV-h6P"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pOV-mb-IiL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -113,7 +113,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="esD-ua-2fH" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="tt1-dG-fTc">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="tt1-dG-fTc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
