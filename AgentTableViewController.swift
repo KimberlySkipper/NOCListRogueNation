@@ -21,13 +21,7 @@ class AgentTableViewController: UITableViewController
         self.loadNOCList()
     }
 
-    override func didReceiveMemoryWarning()
-    {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-     //MARK: - Table view data source
+//MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int
     {
@@ -80,12 +74,12 @@ class AgentTableViewController: UITableViewController
        }
     }
     
-    // MARK: - Navigation
+// MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?)
     {
-        if segue.identifier == "DetailViewSeque"
+        if segue.identifier == "DetailViewSegue"
         {
             // Get the new view controller using segue.destinationViewController.
             let detailVC = segue.destination as! DetailViewController
@@ -93,7 +87,7 @@ class AgentTableViewController: UITableViewController
             let oneAgent = myAgentArray[indexPath.row]
             detailVC.secretAgent = oneAgent
         }
-        // Pass the selected object to the new view controller.
+        
     }
 
 }
