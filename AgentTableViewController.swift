@@ -80,8 +80,6 @@ class AgentTableViewController: UITableViewController
        }
     }
     
-
-
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -97,23 +95,5 @@ class AgentTableViewController: UITableViewController
         }
         // Pass the selected object to the new view controller.
     }
-
-/*#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    if([[segue identifier] isEqualToString:@"SecretAgentDetailSegue"])
-    {
-        SecretAgentDetailViewController *detailVC = [segue destinationViewController];
-        
-        UITableViewCell *selectedCell = (UITableViewCell *)sender;
-        
-        NSIndexPath *indexPath = [self.tableView indexPathForCell: selectedCell];
-        SecretAgent *selectedSecretAgent = self.agents [indexPath.row];
-        
-        detailVC.secretAgent = selectedSecretAgent; */
-
-
 
 }
